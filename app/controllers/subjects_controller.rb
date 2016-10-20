@@ -10,6 +10,7 @@ class SubjectsController < ApplicationController
   # GET /subjects/1
   # GET /subjects/1.json
   def show
+    @posts = @subject.posts
   end
 
   # GET /subjects/new
@@ -25,6 +26,7 @@ class SubjectsController < ApplicationController
   # POST /subjects.json
   def create
     @subject = Subject.new(subject_params)
+    @subject.user_id = current_user.id if current_user
 
     respond_to do |format|
       if @subject.save

@@ -7,8 +7,9 @@
     <%= f.input :resource_type %>
     <%= f.input :file_url %>
     <%= f.input :approved %>
-    <%= f.association :user %>
-    <%= f.association :subject %>
+    <!-- <%= f.association :user %> -->
+    <!-- <%= f.association :subject %> -->
+    <%= f.hidden_field :subject_id, :value => params[:subject_id]%>
   </div>
 
   <div class="form-actions">
