@@ -6,8 +6,10 @@
   <% @subjects.each do |subject| %>
     <a href="<%= subject_path(subject) %>">
       <li><%= subject.name %>
+
       <!-- <%= link_to 'Show', posts_path(subject_id:subject.id) %> -->
     </a>
+      <%= link_to "Add post",new_post_path(subject_id:subject.id)%></li>
   <% end %>
 </ul>
 

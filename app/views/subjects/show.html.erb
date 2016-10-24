@@ -1,20 +1,25 @@
 <p id="notice"><%= notice %></p>
-
+<div class="row">
 <% @posts.each do |post| %>
 
-    <li><%= post.title %></li>
-    <li><%= post.summary %></li>
-    <li><%= post.resource_type %></li>
-    <li><%= post.file_url %></li>
-    <%= link_to "Add post",new_post_path(subject_id:subject.id)%></li>
-    <!-- <%= link_to 'Edit', edit_post_path(post) %></li>
-    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></li> -->
+  <div class= "col-md-4">
+    <div class="panel panel-default">
+
+    <p class = "panel-heading post-style"><%= post.title %></p>
+    <div class = "panel-body">
+      <p><%= truncate(post.summary,length: 50) %></p>
+      <p><%= post.resource_type %></p>
+      <p><%= link_to post.file_url,post.file_url,target: "_blank" %></p>
+      <p><%= post.user.email%></p>
+      <p><%= post.created_at.strftime("%b %d, %Y")%></p>
+   </div>
+    <p><%= link_to 'Show', post_path(subject_id:@subject.id) %><p>
+  </div>
+</div>
+  <%#= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+
 
 <% end %>
-
-
-
-
-
-<!-- <%= link_to 'Edit', edit_subject_path(@subject) %> |
-<%= link_to 'Back', subjects_path %> -->
+</div>
+  <li><%= link_to "Add post",new_post_path(subject_id:@subject.id)%></li>

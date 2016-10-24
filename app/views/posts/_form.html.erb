@@ -4,7 +4,7 @@
   <div class="form-inputs">
     <%= f.input :title %>
     <%= f.input :summary %>
-    <%= f.input :resource_type %>
+    <%= f.input :resource_type, collection: [:classnotes,:assignment,:studynotes] %>
     <%= f.input :file_url %>
     <%= f.input :approved %>
     <!-- <%= f.association :user %> -->
