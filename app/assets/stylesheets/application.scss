@@ -1,8 +1,37 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-p .post-style{
-  color: red;
+// .panel-default > .panel-heading {
+//     color: red;
+//     background-color: #f5f5f5;
+//     border-color: #ddd;
+// }
+//
+// .panel-body {
+//     padding: 20px;
+// }
+.post-group{
+  height: 300px;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #F5CE9F;
+  margin-bottom: 10px;
+  padding-left: 10px;
+
+}
+.post-title{
+  color:green;
+  font-weight: bold;
+  border: 1px solid #F5CE9F;
+  border-bottom: 0px;
+  font-size: 20px;
+  margin-bottom: 0px;
+  padding-left: 10px;
+}
+.post-summary{
+  font-size: 15px;
+  font-weight: bold;
 }
 .year-square {
   height: 150px;

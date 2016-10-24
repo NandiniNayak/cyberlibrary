@@ -3,7 +3,7 @@
 
   <div class="form-inputs">
     <%= f.input :name, placeholder: "What is the name of the subject?" %>
-    <%= f.input :year_group, collection: 7..12 %>
+    <%= f.input :year_group, collection: [7,8,9,10,11,12,:"9 and 10" ]%>
   </div>
 
   <div class="form-actions">

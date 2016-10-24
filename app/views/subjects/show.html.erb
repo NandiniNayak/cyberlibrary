@@ -1,25 +1,20 @@
 <p id="notice"><%= notice %></p>
-<div class="row">
-<% @posts.each do |post| %>
 
-  <div class= "col-md-4">
-    <div class="panel panel-default">
-
-    <p class = "panel-heading post-style"><%= post.title %></p>
-    <div class = "panel-body">
-      <p><%= truncate(post.summary,length: 50) %></p>
-      <p><%= post.resource_type %></p>
-      <p><%= link_to post.file_url,post.file_url,target: "_blank" %></p>
-      <p><%= post.user.email%></p>
-      <p><%= post.created_at.strftime("%b %d, %Y")%></p>
-   </div>
-    <p><%= link_to 'Show', post_path(subject_id:@subject.id) %><p>
-  </div>
+<div class = "row">
+  <% @posts.each do |post| %>
+    <div class="col-md-6">
+          <p class = "post-title"><%= post.title %></p>
+          <div class = "post-group">
+          <p class ="post-summary">summary: <%= truncate(post.summary,length: 300) %></p>
+          <p>Resource Type: <%= post.resource_type %></p>
+          <p><%= link_to post.file_url,post.file_url,target: "_blank" %></p>
+          <p>Posted By: <%= post.user.email%></p>
+          <p><%= post.created_at.strftime("%b %d, %Y")%></p>
+          <p><%= link_to 'Show', post_path(subject_id:@subject.id) %><p>
+        </div>
+    </div>
+    <%#= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
 </div>
-  <%#= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
 
-
-
-<% end %>
-</div>
   <li><%= link_to "Add post",new_post_path(subject_id:@subject.id)%></li>
